@@ -3,12 +3,33 @@
 
 ----
 
+#### 使用
+
+```swift
+let yourInputPhoneNumberString = "xxxxx"
+
+// initialize
+let phoneNumberValid = MMSampleRegular.init(.Default(.Phone))
+// let phoneNumberValid = MMSampleRegular.init(.Custom("^((13[0-9])|(147)|(15[0-3,5-9])|(18[0,0-9])|(17[0-3,5-9]))\\d{8}$"))
+// let phoneNumberValid = MMSampleRegular.init("^((13[0-9])|(147)|(15[0-3,5-9])|(18[0,0-9])|(17[0-3,5-9]))\\d{8}$")
+
+// match  
+phoneNumberValid.match(yourInputPhoneNumberString)
+
+```
+
+
+
 #### 特点
-* 支持使用内置的几种正则匹配规则
+
+* 内置几种常用正则匹配规则
 * 支持使用自定的正则匹配规则
 * 接口简单易用
 
+
+
 #### 不足
+
 * 无法使内置的匹配规则进行组合使用
 
 比如，如果一个需求是输入的内容既可以是手机号又可以是邮箱。这时候就只能创建两个MMSampleRegular实例，来进行 `||` 运算
@@ -24,5 +45,8 @@
     ...
 ```
 
+
+
 #### 测试
+
 ![playground](example.png)
