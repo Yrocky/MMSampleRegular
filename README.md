@@ -16,11 +16,11 @@
 ``` swift
     var nameValid :Bool
     let phoneValid = MMSampleRegular.init(.Default(.Phone)).match(self.name)
-    let emailNubValid = MMSampleRegular.init(.Default(.Email)).match(self.name)
+    let emailValid = MMSampleRegular.init(.Default(.Email)).match(self.name)
     
     let passwordValid = MMSampleRegular.init("^[a-zA-Z0-9]{6,14}$").match(self.password)// [6,14]位的密码
 
-    nameValid = phoneValid! || mmNubValid!
+    nameValid = phoneValid! || emailValid!
     ...
 ```
 
